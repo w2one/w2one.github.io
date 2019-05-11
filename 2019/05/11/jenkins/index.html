@@ -16,7 +16,7 @@
 <meta property="og:description" content="自动化部署 jenkins 是个好帮手！！！">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/05/11/jenkins/jenkins-ssh-config.jpg">
-<meta property="og:updated_time" content="2019-05-11T12:03:25.971Z">
+<meta property="og:updated_time" content="2019-05-11T12:05:59.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins">
 <meta name="twitter:description" content="自动化部署 jenkins 是个好帮手！！！">
@@ -96,9 +96,7 @@
 <p>docker-compose.yml</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line">  jenkins:</span><br><span class="line">    image: jenkins/jenkins:lts</span><br><span class="line">    container_name: docker-jenkins</span><br><span class="line">    volumes:</span><br><span class="line">      - ./jenkins_home:/var/jenkins_home</span><br><span class="line">    ports:</span><br><span class="line">      - 40001:8080</span><br><span class="line">      - 50000:50000</span><br></pre></td></tr></table></figure>
 <p>文件挂在在 jenkins_home 下，暴露 40001，50000 端口</p>
-<blockquote>
-<p>docker-compose up</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up</span><br></pre></td></tr></table></figure>
 <p>浏览器打开<a href="http://ip:40001" target="_blank" rel="noopener">http://ip:40001</a> 就可以看到 jenkins 启动的配置页面了。</p>
 <p>首次需要密码,执行下面脚本，copy 密码。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it docker-jenkins /bin/bash</span><br><span class="line">cat /var/jenkins_home/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
@@ -117,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/11/jenkins/" data-id="cjvjgh5kh0001tqa3fajj60d1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/11/jenkins/" data-id="cjvjh18bx00019va39n89mknm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动化/">自动化</a></li></ul>
@@ -131,7 +129,7 @@
   
     <a href="/2019/05/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Hello Hexo</div>
     </a>
   
 </nav>
@@ -186,7 +184,7 @@
           </li>
         
           <li>
-            <a href="/2019/05/03/hello-world/">Hello World</a>
+            <a href="/2019/05/03/hello-world/">Hello Hexo</a>
           </li>
         
       </ul>
