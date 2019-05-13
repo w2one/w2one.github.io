@@ -9,11 +9,14 @@ tags:
 
 <!--more-->
 
-编写代码，提交代码，拉取最新代码，打包，部署。这种重复的体力活怎么能忍受，做好自己的事，安安静静的写 bug 不好吗，其他全都交给 [jenkins](https://jenkins.io/) 吧。
+# 不想干前端的后端不是好全栈
 
-# 安装
+编写代码=>提交代码=>拉取最新代码=>打包=>部署。
+这种重复的体力活怎么能忍受，做好自己的事，安安静静地写 bug 不好吗，其他全都交给 [jenkins](https://jenkins.io/) 吧。
 
-当然使用 docker 神奇来安装了
+## 安装
+
+当然使用 [docker](https://www.docker.com) 神奇来安装了
 
 docker-compose.yml
 
@@ -30,10 +33,10 @@ services:
       - 50000:50000
 ```
 
-文件挂在在 jenkins_home 下，暴露 40001，50000 端口
+文件挂在 jenkins_home 下，暴露 40001，50000 端口
 
 ```
-docker-compose up
+docker-compose up -d
 ```
 
 浏览器打开http://ip:40001 就可以看到 jenkins 启动的配置页面了。
@@ -46,8 +49,9 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 安装建议的插件
-nodejs
-publish over ssh
+
+- nodejs
+- publish over ssh
 
 ## 配置一个项目
 
@@ -88,8 +92,8 @@ Send build artifacts over SSH
 
 <!-- ![config](jenkins/jenkins-ssh-config.jpg) -->
 
-{% asset_img jenkins-ssh-config.jpg %}
+<!--{% asset_img jenkins-ssh-config.jpg %}-->
 
-## REF
+![config dd](https://mmbiz.qpic.cn/mmbiz_png/Pt6hoBjGNovCT15EOKEuf0B0mwQcoRQ3vIAvibYD45sW2hggdFn8fW2EuJcVKjGMT1woibiasUdC0XhSMrn9wUvSw/0)
 
-[docker jenkins](https://hub.docker.com/_/jenkins)
+![msg](https://mmbiz.qpic.cn/mmbiz_png/Pt6hoBjGNovCT15EOKEuf0B0mwQcoRQ3bnmdvods9b8RLUoulSnRQGacGLatoS6NXPq8XZhFqNyBx7ic5HL9evg/0)
