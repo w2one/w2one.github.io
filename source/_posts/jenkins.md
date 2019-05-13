@@ -92,8 +92,9 @@ Send build artifacts over SSH
 
 <!-- ![config](jenkins/jenkins-ssh-config.jpg) -->
 
-<!--{% asset_img jenkins-ssh-config.jpg %}-->
+{% asset_img jenkins-ssh-config.jpg %}
 
-![config dd](https://mmbiz.qpic.cn/mmbiz_png/Pt6hoBjGNovCT15EOKEuf0B0mwQcoRQ3vIAvibYD45sW2hggdFn8fW2EuJcVKjGMT1woibiasUdC0XhSMrn9wUvSw/0)
-
-![msg](https://mmbiz.qpic.cn/mmbiz_png/Pt6hoBjGNovCT15EOKEuf0B0mwQcoRQ3bnmdvods9b8RLUoulSnRQGacGLatoS6NXPq8XZhFqNyBx7ic5HL9evg/0)
+钉钉配置
+{% asset_img jenkins-dingding.png %}
+提示
+{% asset_img jenkins-diingding-msg.png %}
