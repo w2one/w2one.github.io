@@ -5,18 +5,20 @@
   
 
   
-  <title>w2one</title>
+  <title>react i18n | w2one</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="we are one">
-<meta property="og:type" content="website">
-<meta property="og:title" content="w2one">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="react i18n">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react i18n">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/react-i18n/index.html">
 <meta property="og:site_name" content="w2one">
-<meta property="og:description" content="we are one">
+<meta property="og:description" content="react i18n">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-05T15:06:11.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="w2one">
-<meta name="twitter:description" content="we are one">
+<meta name="twitter:title" content="react i18n">
+<meta name="twitter:description" content="react i18n">
   
     <link rel="alternate" href="/atom.xml" title="w2one" type="application/atom+xml">
   
@@ -63,9 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-react-i18n" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-react-i18n" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/05/react-i18n/" class="article-date">
   <time datetime="2019-08-05T14:56:49.000Z" itemprop="datePublished">2019-08-05</time>
@@ -78,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/05/react-i18n/">react i18n</a>
+    <h1 class="article-title" itemprop="name">
+      react i18n
     </h1>
   
 
@@ -88,11 +88,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>react i18n</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/05/react-i18n/#more">Read More</a>
-          </p>
-        
+<a id="more"></a>
+<p><a href="https://github.com/alibaba/react-intl-universal" target="_blank" rel="noopener">react-intl-universal</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import intl from &apos;react-intl-universal&apos;;</span><br><span class="line">// common locale data</span><br><span class="line">require(&apos;intl/locale-data/jsonp/en.js&apos;);</span><br><span class="line">require(&apos;intl/locale-data/jsonp/zh.js&apos;);</span><br><span class="line"></span><br><span class="line">// app locale data</span><br><span class="line">const locales = &#123;</span><br><span class="line">  &quot;en-US&quot;: require(&apos;./locales/en-US.js&apos;),</span><br><span class="line">  &quot;zh-CN&quot;: require(&apos;./locales/zh-CN.js&apos;),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line"></span><br><span class="line">  state = &#123;initDone: false&#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    this.loadLocales();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  loadLocales() &#123;</span><br><span class="line">    // init method will load CLDR locale data according to currentLocale</span><br><span class="line">    // react-intl-universal is singleton, so you should init it only once in your app</span><br><span class="line">    intl.init(&#123;</span><br><span class="line">      currentLocale: &apos;en-US&apos;, // TODO: determine locale here</span><br><span class="line">      locales,</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(() =&gt; &#123;</span><br><span class="line">      // After loading CLDR locale data, start to render</span><br><span class="line">	  this.setState(&#123;initDone: true&#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      this.state.initDone &amp;&amp;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &#123;intl.get(&apos;SIMPLE&apos;)&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -104,95 +103,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-jenkins" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/11/jenkins/" class="article-date">
-  <time datetime="2019-05-11T11:21:04.000Z" itemprop="datePublished">2019-05-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/11/jenkins/">Jenkins</a>
-    </h1>
+    <a href="/2019/05/11/jenkins/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Jenkins</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自动化部署 jenkins 是个好帮手！！！</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/11/jenkins/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/11/jenkins/" data-id="cjyyj27oy0001nsa3kw3zi27m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动化/">自动化</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/03/hello-world/" class="article-date">
-  <time datetime="2019-05-03T08:09:53.875Z" itemprop="datePublished">2019-05-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/03/hello-world/">Hello Hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hello hexo</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/03/hello-world/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/03/hello-world/" data-id="cjyyj27p10003nsa3uyu69y67" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
